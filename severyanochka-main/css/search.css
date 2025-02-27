@@ -1,0 +1,31 @@
+
+.suggestions {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 4px rgba(112, 192, 91, 1);
+  display: none;
+  top: 100%;
+  margin-top: -1px;
+  margin-left: -17px;
+}
+
+.suggestion-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+  background: #f8f9fa;
+}
+
+.highlight {
+  font-weight: 700;
+  
+}

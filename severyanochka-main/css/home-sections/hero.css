@@ -1,0 +1,35 @@
+.hero {
+  background: url(/img/backgrounds/confetti.png);
+
+  height: clamp(80px, 20.835vw, 200px);
+}
+
+.hero__image {
+  @media (max-width: 1000px) {
+    width: 250px;
+
+    align-self: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.hero .container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.hero__title {
+  color: var(--foreground);
+  font-size: clamp(18px, 3.125vw, 48px);
+  font-weight: 700;
+  line-height: 72px;
+}

@@ -1,0 +1,9 @@
+.title-Sonderangebote{
+    color: rgba(65, 65, 65, 1);
+    font-size: 36px;
+    font-weight: 700;
+}
+.line-Sonderangebote{
+    display: flex;
+    flex-direction: row;
+}

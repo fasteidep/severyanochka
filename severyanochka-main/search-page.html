@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="Северяночка. Магазин по доставке продуктов. Доставка от 1000₽ бесплатно"
+    />
+    <meta
+        name="keywords"
+        content="северяночка, магазин, по доставке, продукты, доставка, от 1000₽, бесплатно"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/home-page.css" />
+    <script
+        src="https://api-maps.yandex.ru/2.1/?apikey=986d3b28-31ba-4d84-a902-6e0356fbd76c&lang=ru_RU"
+        type="text/javascript"
+    ></script>
+    <title>Результаты поиска</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+              <div class="header__body">
+                <a href="index.html" class="header__logo">
+                  <img
+                    class="header__logo_big"
+                    src="img/logo.svg"
+                    alt="Северяночка"
+                  />
+                  <img class="header__logo_small" src="img/icon.svg" alt=":)" />
+                </a>
+                <!-- Каталог -->
+                <div data-spollers class="header__catalog catalog">
+                  <button data-spoller class="catalog__button button" type="button">
+                    <div class="burger">
+                      <span class="burger__line burger__line--top"></span
+                      ><span class="burger__line burger__line--middle"></span
+                      ><span class="burger__line burger__line--bottom"></span>
+                    </div>
+                    <span class="catalog__button_text">Каталог</span>
+                  </button>
+                  <ul class="catalog__list">
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                    <li class="catalog__item">
+                      <a href="#" class="catalog__link">Молоко</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--  -->
+    
+                <!-- Поиск -->
+                <form action="#" method="get" class="header__search search field">
+                  <input
+                    type="text"
+                    name="term"
+                    placeholder="Найти товар"
+                    class="search__field"
+                    id="searchInput"
+                    autocomplete="off"
+                  />
+                  <button class="search__button" type="submit">
+                    <img src="img/icons/search.svg" alt="Поиск" />
+                  </button>
+                  <div id="suggestions" class="suggestions"></div>
+                </form>
+                <!--  -->
+    
+                <!-- Actions -->
+                <div class="header__actions actions">
+                  <ul class="actions__list">
+                    <li class="actions__item">
+                      <a href="#" class="actions__link">
+                        <img src="img/icons/actions/01.svg" alt="01" />
+                        <span class="actions__text">Избранное</span></a
+                      >
+                    </li>
+                    <li class="actions__item">
+                      <a href="#" class="actions__link">
+                        <img src="img/icons/actions/02.svg" alt="02" />
+                        <span class="actions__text">Заказы</span></a
+                      >
+                    </li>
+                    <li data-count="1" class="actions__item">
+                      <a href="#" class="actions__link">
+                        <img src="img/icons/actions/03.svg" alt="03" />
+                        <span class="actions__text">Корзина</span></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <!--  -->
+    
+                <!-- Личный кабинет (ЛК) -->
+                <div data-spollers class="header__account account">
+                  <div class="account__body" data-spoller>
+                    <img
+                      src="img/avatar.jpg"
+                      alt="avatar"
+                      class="account__avatar"
+                    />
+                    <div class="account__info">
+                      <div class="account__name">Алексей</div>
+                      <button class="account__button" type="button">
+                        <img src="img/icons/arrow-down.svg" alt="arrow-down" />
+                      </button>
+                    </div>
+                  </div>
+                  <ul class="account__list">
+                    <li class="account__item">
+                      <a href="#" class="account__link">Панель управления</a>
+                    </li>
+                    <li class="account__item">
+                      <a href="#" class="account__link">Уведомления</a>
+                    </li>
+                    <li class="account__item">
+                      <a href="#" class="account__link">Выйти</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--  -->
+              </div>
+            </div>
+        </header>
+        <main>
+
+        </main>
+        <footer class="footer">
+            <div class="conteiner-footer">
+              <ul class="elements_footer">
+                <li><img src="/img/logo-footer.svg"></li>
+                <li>
+                  <ul class="list-urls">
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Статьи</a></li>
+                    <li><a href="#">Политика обработки персональных данных</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="social-urls">
+                    <li>
+                      <a href="#"><img src="/img/icons/footer/instagram.svg"></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="/img/icons/footer/vk.svg"></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="/img/icons/footer/facebook.svg"></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="/img/icons/footer/odnkl.svg"></a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="right-footer-telephone">
+                    <img src="/img/icons/footer/telephone.svg" alt="telephone_icon">
+                    <p>8 800 777 33 33</p>
+                  </div>
+                  
+                </li>
+              </ul>
+              <div class="under-footer-div">
+                <div class="under-footer-div-elements">
+                  <p>Дизайн</p>
+                  <a href="#"><img src="/img/icons/footer/logo-zasovskiy-small-black.svg" alt="logo-zasovskiy"></a>
+                </div>
+              </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>

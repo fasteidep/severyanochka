@@ -1,0 +1,31 @@
+.page__products {
+}
+
+.products {
+}
+
+.products__header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+
+.products__title {
+}
+
+.products__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.products__items {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.products__items-wrapper {
+  overflow: hidden;
+}

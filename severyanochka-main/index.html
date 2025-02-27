@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Северяночка. Магазин по доставке продуктов. Доставка от 1000₽ бесплатно"
+    />
+    <meta
+      name="keywords"
+      content="северяночка, магазин, по доставке, продукты, доставка, от 1000₽, бесплатно"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/home-page.css" />
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=986d3b28-31ba-4d84-a902-6e0356fbd76c&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+    <title>Северяночка</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__body">
+            <a href="index.html" class="header__logo">
+              <img
+                class="header__logo_big"
+                src="img/logo.svg"
+                alt="Северяночка"
+              />
+              <img class="header__logo_small" src="img/icon.svg" alt=":)" />
+            </a>
+            <!-- Каталог -->
+            <div data-spollers class="header__catalog catalog">
+              <button data-spoller class="catalog__button button" type="button">
+                <div class="burger">
+                  <span class="burger__line burger__line--top"></span
+                  ><span class="burger__line burger__line--middle"></span
+                  ><span class="burger__line burger__line--bottom"></span>
+                </div>
+                <span class="catalog__button_text">Каталог</span>
+              </button>
+              <ul class="catalog__list">
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+                <li class="catalog__item">
+                  <a href="#" class="catalog__link">Молоко</a>
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+
+            <!-- Поиск -->
+            <form action="#" method="get" class="header__search search field">
+              <input
+                type="text"
+                name="term"
+                placeholder="Найти товар"
+                class="search__field"
+                id="searchInput"
+                autocomplete="off"
+              />
+              <button class="search__button" type="submit">
+                <img src="img/icons/search.svg" alt="Поиск" />
+              </button>
+              <div id="suggestions" class="suggestions"></div>
+            </form>
+            <!--  -->
+
+            <!-- Actions -->
+            <div class="header__actions actions">
+              <ul class="actions__list">
+                <li class="actions__item">
+                  <a href="#" class="actions__link">
+                    <img src="img/icons/actions/01.svg" alt="01" />
+                    <span class="actions__text">Избранное</span></a
+                  >
+                </li>
+                <li class="actions__item">
+                  <a href="#" class="actions__link">
+                    <img src="img/icons/actions/02.svg" alt="02" />
+                    <span class="actions__text">Заказы</span></a
+                  >
+                </li>
+                <li data-count="1" class="actions__item">
+                  <a href="#" class="actions__link">
+                    <img src="img/icons/actions/03.svg" alt="03" />
+                    <span class="actions__text">Корзина</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+
+            <!-- Личный кабинет (ЛК) -->
+            <div data-spollers class="header__account account">
+              <div class="account__body" data-spoller>
+                <img
+                  src="img/avatar.jpg"
+                  alt="avatar"
+                  class="account__avatar"
+                />
+                <div class="account__info">
+                  <div class="account__name">Алексей</div>
+                  <button class="account__button" type="button">
+                    <img src="img/icons/arrow-down.svg" alt="arrow-down" />
+                  </button>
+                </div>
+              </div>
+              <ul class="account__list">
+                <li class="account__item">
+                  <a href="#" class="account__link">Панель управления</a>
+                </li>
+                <li class="account__item">
+                  <a href="#" class="account__link">Уведомления</a>
+                </li>
+                <li class="account__item">
+                  <a href="#" class="account__link">Выйти</a>
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </header>
+      <main class="page">
+        <section class="page-section page__section hero">
+          <div class="container">
+            <img
+              class="hero__image"
+              src="/img/sections/products-basket.png"
+              alt="Продукты и корзина"
+            />
+            <h2 class="hero__title">Доставка бесплатно от 1000 ₽</h2>
+          </div>
+        </section>
+
+        <section class="page-section page__products products">
+          <div class="container">
+            <div class="products__header">
+              <h2 class="products__title title">Акции</h2>
+              <a href="#" class="products__link"
+                >Все акции <img src="img/icons/arrow-right.svg" alt="Все акции"
+              /></a>
+            </div>
+
+            <div class="swiper">
+              <ul class="products__items swiper-wrapper discount-products">
+                <!-- Продукты -->
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="page-section page__products products">
+          <div class="container">
+            <div class="products__header">
+              <h2 class="products__title title">Новинки</h2>
+              <a href="#" class="products__link"
+                >Все новинки
+                <img src="img/icons/arrow-right.svg" alt="Все новинки"
+              /></a>
+            </div>
+
+            <div class="swiper">
+              <ul class="products__items swiper-wrapper new-products">
+                <!-- Продукты -->
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="page-section page__products products">
+          <div class="container">
+            <div class="products__header">
+              <h2 class="products__title title">Покупали раньше</h2>
+              <a href="#" class="products__link"
+                >Все покупки
+                <img src="img/icons/arrow-right.svg" alt="Все покупки"
+              /></a>
+            </div>
+            <div class="swiper">
+              <ul class="products__items swiper-wrapper sold-before-products">
+                <!-- Продукты -->
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="page-section page__maps maps">
+          <div class="container">
+            <div class="products__header">
+              <h2 class="maps__title title">Наши магазины</h2>
+            </div>
+            <div data-tabs>
+              <ul class="maps__tabs">
+                <li class="maps__tab">
+                  <button
+                    class="maps__tab-button button"
+                    data-tab-trigger="п.Щельяюр"
+                  >
+                    п.Щельяюр
+                  </button>
+                </li>
+                <li class="maps__tab">
+                  <button
+                    class="maps__tab-button button"
+                    data-tab-trigger="д.Вертеп"
+                  >
+                    д.Вертеп
+                  </button>
+                </li>
+                <li class="maps__tab">
+                  <button
+                    class="maps__tab-button button"
+                    data-tab-trigger="с.Краснобор"
+                  >
+                    с.Краснобор
+                  </button>
+                </li>
+                <li class="maps__tab">
+                  <button
+                    class="maps__tab-button button"
+                    data-tab-trigger="д.Диюр"
+                  >
+                    д.Диюр
+                  </button>
+                </li>
+              </ul>
+
+              <div class="maps__container">
+                <div
+                  id="b1-map"
+                  data-tab-content="п.Щельяюр"
+                  style="width: 1208px !important; height: 354px !important"
+                  class="maps__map"
+                ></div>
+                <div
+                  id="b2-map"
+                  data-tab-content="д.Вертеп"
+                  style="width: 1208px !important; height: 354px !important"
+                  class="maps__map"
+                ></div>
+                <div
+                  id="b3-map"
+                  data-tab-content="с.Краснобор"
+                  style="width: 1208px !important; height: 354px !important"
+                  class="maps__map"
+                ></div>
+                <div
+                  id="b4-map"
+                  data-tab-content="д.Диюр"
+                  style="width: 1208px !important; height: 354px !important"
+                  class="maps__map"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="articles page-section">
+            <div class="container">
+              <div class="products__header">
+                <h2 class="products__title title">Статьи</h2>
+                <a href="#" class="products__link"
+                  >Все статьи
+                  <img src="img/icons/arrow-right.svg" alt="Все статьи"
+                /></a>
+              </div>
+              <div class="swiper">
+                <ul class="articles-list swiper-wrapper">
+                  <!-- Статьи -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="conteiner-footer">
+          <ul class="elements_footer">
+            <li><img src="/img/logo-footer.svg"></li>
+            <li>
+              <ul class="list-urls">
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Вакансии</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Политика обработки персональных данных</a></li>
+              </ul>
+            </li>
+            <li>
+              <ul class="social-urls">
+                <li>
+                  <a href="#"><img src="/img/icons/footer/instagram.svg"></a>
+                </li>
+                <li>
+                  <a href="#"><img src="/img/icons/footer/vk.svg"></a>
+                </li>
+                <li>
+                  <a href="#"><img src="/img/icons/footer/facebook.svg"></a>
+                </li>
+                <li>
+                  <a href="#"><img src="/img/icons/footer/odnkl.svg"></a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="right-footer-telephone">
+                <img src="/img/icons/footer/telephone.svg" alt="telephone_icon">
+                <p>8 800 777 33 33</p>
+              </div>
+              
+            </li>
+          </ul>
+          <div class="under-footer-div">
+            <div class="under-footer-div-elements">
+              <p>Дизайн</p>
+              <a href="#"><img src="/img/icons/footer/logo-zasovskiy-small-black.svg" alt="logo-zasovskiy"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Мобильная навигация -->
+      <nav class="mobile-navbar actions">
+        <div class="mobile-navbar__wrapper">
+          <a href="#" class="mobile-navbar__link">
+            <img src="img/icons/actions/burger.svg" alt="Каталог" />
+            <span class="actions__text">Каталог</span></a
+          >
+          <a href="#" class="mobile-navbar__link">
+            <img src="img/icons/actions/01.svg" alt="01" />
+            <span class="actions__text">Избранное</span></a
+          >
+          <a href="#" class="mobile-navbar__link">
+            <img src="img/icons/actions/02.svg" alt="02" />
+            <span class="actions__text">Заказы</span></a
+          >
+          <a href="#" class="mobile-navbar__link">
+            <img src="img/icons/actions/03.svg" alt="03" />
+            <span class="actions__text">Корзина</span></a
+          >
+          <button
+            class="mobile-navbar__link mobile-navbar__account"
+            type="button"
+          >
+            <img src="img/avatar.jpg" alt="avatar" class="account__avatar" />
+          </button>
+        </div>
+      </nav>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/maps.js" type="module"></script>
+    <script src="./js/products.js" type="module"></script>
+    <script src="./js/articles.js" type="module"></script>
+    <script src="./js/search.js" type="module"></script>
+  </body>
+</html>

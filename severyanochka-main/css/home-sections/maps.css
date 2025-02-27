@@ -1,0 +1,27 @@
+.page__maps {
+  padding-bottom: 90px;
+}
+.maps__tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.maps__tab-button {
+  --maps-tab-button-background: var(--light);
+  --maps-tab-button-foreground: var(--light-foreground);
+  background-color: var(--maps-tab-button-background);
+  color: var(--maps-tab-button-foreground);
+  border-radius: 4px;
+  padding: 10px 14px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.maps__tab-button.active {
+  --maps-tab-button-background: var(--green);
+  --maps-tab-button-foreground: #fff;
+}
+
+.maps__container {
+  padding-top: 20px;
+}

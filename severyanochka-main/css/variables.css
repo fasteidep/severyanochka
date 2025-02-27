@@ -1,0 +1,19 @@
+:root {
+  --padding: 15px;
+  --container: 1208px;
+  --font: "Rubik", sans-serif;
+  --default-size: 16px;
+  /* Цвета */
+  --foreground: #414141;
+  --gray: #8f8f8f;
+  --green: #70c05b;
+  --primary: #ff6633;
+  --light: #bfbfbf;
+  --background: #fbf8ec;
+  --white: #fff;
+  --black: #000;
+  --light: #f3f2f1;
+  --light-foreground: #606060;
+  --less-light: #bfbfbf;
+  --dark: #232323;
+}
