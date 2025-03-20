@@ -1,121 +1,104 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.item-cart').forEach(item => {
-        updateItemPrice(item);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cartItems = document.querySelectorAll(".cart__item");
+    const selectAllButton = document.querySelector(".cart__select");
+    const deleteSelectedButton = document.querySelector(".cart__delete");
+    const totalPriceElement = document.querySelector(".control-cart__amount-value");
+    const totalItemsElement = document.querySelector(".control-cart__item-title");
+    const discountElement = document.querySelector(".control-cart__item-value--highlighted");
+    const bonusElement = document.querySelector(".control-cart__getting-bonus");
+    const alertElement = document.querySelector(".control-cart__alert");
+  
+    let selectedItems = [];
+    let totalPrice = 0;
+    let totalItems = 0;
+    let totalDiscount = 0;
+  
+    function updateTotals() {
+      totalPrice = 0;
+      totalItems = 0;
+      totalDiscount = 0;
+  
+      cartItems.forEach((item) => {
+        if (item.querySelector(".item-cart__selector").classList.contains("active")) {
+          const priceWithCard = parseFloat(
+            item
+              .querySelector(".item-cart__price-with-card span")
+              .textContent.replace(",", ".")
+          );
+          const quantity = parseInt(
+            item.querySelector(".item-cart__counter-value").textContent
+          );
+          const discount = parseFloat(
+            item
+              .querySelector(".item-cart__discount")
+              .getAttribute("data-discount")
+              .replace("%", "")
+          );
+  
+          totalPrice += priceWithCard * quantity;
+          totalItems += quantity;
+          totalDiscount += (priceWithCard * quantity * discount) / 100;
+        }
+      });
+  
+      totalPriceElement.textContent = `${(totalPrice - totalDiscount).toFixed(2)} ₽`;
+      totalItemsElement.textContent = `${totalItems} товара`;
+      discountElement.textContent = `-${totalDiscount.toFixed(2)} ₽`;
+      bonusElement.textContent = `Вы получаете ${Math.floor(totalPrice / 10)} бонусов`;
+  
+      if (totalPrice < 1000) {
+        alertElement.style.display = "block";
+      } else {
+        alertElement.style.display = "none";
+      }
+    }
+  
+    selectAllButton.addEventListener("click", function () {
+      const isActive = selectAllButton.classList.toggle("active");
+      cartItems.forEach((item) => {
+        item.querySelector(".item-cart__selector").classList.toggle("active", isActive);
+      });
+      updateTotals();
     });
-
-    document.querySelector('.cart__select').addEventListener('click', toggleSelectAll);
-    
-    document.querySelectorAll('.item-cart__selector').forEach(selector => {
-        selector.addEventListener('click', function() {
-            this.classList.toggle('active');
-            checkAllSelected();
-            updateTotal();
-        });
+  
+    deleteSelectedButton.addEventListener("click", function () {
+      cartItems.forEach((item) => {
+        if (item.querySelector(".item-cart__selector").classList.contains("active")) {
+          item.remove();
+        }
+      });
+      updateTotals();
     });
-
-    document.querySelectorAll('.item-cart__counter-btn').forEach(button => {
-        button.addEventListener('click', handleCounterClick);
-    });
-
-    document.querySelector('.cart__delete').addEventListener('click', deleteSelectedItems);
-
-    document.querySelector('.switch').addEventListener('click', function() {
-        this.classList.toggle('active');
-        updateTotal();
-    });
-
-    updateTotal();
-});
-
-function toggleSelectAll() {
-    const selectAllButton = this;
-    const isActive = selectAllButton.classList.toggle('active');
-    
-    document.querySelectorAll('.item-cart:not(.out-of-stock) .item-cart__selector').forEach(selector => {
-        selector.classList.toggle('active', isActive);
-    });
-    
-    updateTotal();
-}
-
-function checkAllSelected() {
-    const allSelectors = document.querySelectorAll('.item-cart:not(.out-of-stock) .item-cart__selector');
-    const allSelected = [...allSelectors].every(s => s.classList.contains('active'));
-    document.querySelector('.cart__select').classList.toggle('active', allSelected);
-}
-
-function handleCounterClick() {
-    const counter = this.closest('.item-cart__counter');
-    const valueElement = counter.querySelector('.item-cart__counter-value');
-    let value = parseInt(valueElement.dataset.counter) || 0;
-    
-    if (this.classList.contains('item-cart__counter-increase')) {
+  
+    cartItems.forEach((item) => {
+      const selector = item.querySelector(".item-cart__selector");
+      const reduceButton = item.querySelector(".item-cart__counter-reduce");
+      const increaseButton = item.querySelector(".item-cart__counter-increase");
+      const counterValue = item.querySelector(".item-cart__counter-value");
+      const priceElement = item.querySelector(".item-cart__price");
+  
+      selector.addEventListener("click", function () {
+        selector.classList.toggle("active");
+        updateTotals();
+      });
+  
+      reduceButton.addEventListener("click", function () {
+        let value = parseInt(counterValue.textContent);
+        if (value > 1) {
+          value--;
+          counterValue.textContent = value;
+          updateTotals();
+        }
+      });
+  
+      increaseButton.addEventListener("click", function () {
+        let value = parseInt(counterValue.textContent);
         value++;
-    } else {
-        value = Math.max(1, value - 1);
-    }
-    
-    valueElement.dataset.counter = value;
-    updateItemPrice(this.closest('.item-cart'));
-    updateTotal();
-}
-
-function updateItemPrice(item) {
-    const price = parseFloat(
-        item.querySelector('[data-price-with-card]').dataset.priceWithCard.replace(',', '.')
-    );
-    const quantity = parseInt(item.querySelector('.item-cart__counter-value').dataset.counter);
-    const total = (price * quantity).toFixed(2);
-    item.querySelector('.item-cart__price').textContent = `${total} ₽`;
-}
-
-function deleteSelectedItems() {
-    document.querySelectorAll('.item-cart__selector.active').forEach(selector => {
-        selector.closest('.cart__item').remove();
+        counterValue.textContent = value;
+        updateTotals();
+      });
     });
-    updateTotal();
-}
-
-function updateTotal() {
-    let total = 0;
-    let discount = 0;
-    let itemsCount = 0;
-
-    document.querySelectorAll('.item-cart:not(.out-of-stock)').forEach(item => {
-        const selector = item.querySelector('.item-cart__selector');
-        if (!selector.classList.contains('active')) return;
-
-        const price = parseFloat(
-            item.querySelector('[data-price-with-card]').dataset.priceWithCard.replace(',', '.')
-        );
-        const regularPrice = parseFloat(
-            item.querySelector('[data-price-without-card]').dataset.priceWithoutCard.replace(',', '.')
-        );
-        const quantity = parseInt(item.querySelector('.item-cart__counter-value').dataset.counter);
-        
-        total += price * quantity;
-        discount += (regularPrice - price) * quantity;
-        itemsCount += quantity;
-    });
-
-    const useBonus = document.querySelector('.switch').classList.contains('active');
-    if (useBonus) {
-        total = Math.max(0, total - 200);
-    }
-
-    document.querySelector('[data-counter="1"]').dataset.counter = itemsCount;
-    document.querySelector('.control-cart__item-title').textContent = `${itemsCount} товара`;
-    document.querySelector('.control-cart__item-value').textContent = `${total.toFixed(2)} ₽`;
-    document.querySelector('.control-cart__item-value--highlighted').textContent = `-${discount.toFixed(2)} ₽`;
-    document.querySelector('.control-cart__amount-value').textContent = `${total.toFixed(2)} ₽`;
-
-    const alertElement = document.querySelector('.control-cart__alert');
-    alertElement.style.display = total < 1000 ? 'block' : 'none';
-
-    // Расчет бонусов
-    const bonus = Math.floor(total / 2.5);
-    document.querySelector('.control-cart__getting-bonus').innerHTML = `
-        <img src="img/icons/cart/bonus.svg" alt="bonus">
-        Вы получаете ${bonus} бонусов
-    `;
-}
+  
+    updateTotals();
+  });
