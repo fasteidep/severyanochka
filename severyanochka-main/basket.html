@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Северяночка. Магазин по доставке продуктов. Доставка от 1000₽ бесплатно"
+		/>
+		<meta
+			name="keywords"
+			content="северяночка, магазин, по доставке, продукты, доставка, от 1000₽, бесплатно"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/cart.css" />
+		<script
+			src="https://api-maps.yandex.ru/2.1/?apikey=986d3b28-31ba-4d84-a902-6e0356fbd76c&lang=ru_RU"
+			type="text/javascript"
+		></script>
+		<title>Северяночка</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="container">
+					<div class="header__body">
+						<a href="index.html" class="header__logo">
+							<img
+								class="header__logo_big"
+								src="img/logo.svg"
+								alt="Северяночка"
+							/>
+							<img class="header__logo_small" src="img/icon.svg" alt=":)" />
+						</a>
+						<!-- Каталог -->
+						<div data-spollers class="header__catalog catalog">
+							<button data-spoller class="catalog__button button" type="button">
+								<div class="burger">
+									<span class="burger__line burger__line--top"></span
+									><span class="burger__line burger__line--middle"></span
+									><span class="burger__line burger__line--bottom"></span>
+								</div>
+								<span class="catalog__button_text">Каталог</span>
+							</button>
+							<ul class="catalog__list">
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+								<li class="catalog__item">
+									<a href="#" class="catalog__link">Молоко</a>
+								</li>
+							</ul>
+						</div>
+						<!--  -->
+
+						<!-- Поиск -->
+						<form action="#" method="get" class="header__search search field">
+							<input
+								autocomplete="off"
+								type="text"
+								name="term"
+								placeholder="Найти товар"
+								class="search__field"
+							/>
+							<button class="search__button" type="submit">
+								<img src="img/icons/search.svg" alt="Поиск" />
+							</button>
+
+							<ul class="search__list"></ul>
+						</form>
+						<!--  -->
+
+						<!-- Actions -->
+						<div class="header__actions actions">
+							<ul class="actions__list">
+								<li class="actions__item">
+									<a href="#" class="actions__link">
+										<img src="img/icons/actions/01.svg" alt="01" />
+										<span class="actions__text">Избранное</span></a
+									>
+								</li>
+								<li class="actions__item">
+									<a href="#" class="actions__link">
+										<img src="img/icons/actions/02.svg" alt="02" />
+										<span class="actions__text">Заказы</span></a
+									>
+								</li>
+								<li data-count="1" class="actions__item">
+									<a href="#" class="actions__link">
+										<img src="img/icons/actions/03.svg" alt="03" />
+										<span class="actions__text">Корзина</span></a
+									>
+								</li>
+							</ul>
+						</div>
+						<!--  -->
+
+						<!-- Личный кабинет (ЛК) -->
+						<div data-spollers class="header__account account">
+							<div class="account__body" data-spoller>
+								<img
+									src="img/avatar.jpg"
+									alt="avatar"
+									class="account__avatar"
+								/>
+								<div class="account__info">
+									<div class="account__name">Алексей</div>
+									<button class="account__button" type="button">
+										<img src="img/icons/arrow-down.svg" alt="arrow-down" />
+									</button>
+								</div>
+							</div>
+							<ul class="account__list">
+								<li class="account__item">
+									<a href="#" class="account__link">Панель управления</a>
+								</li>
+								<li class="account__item">
+									<a href="#" class="account__link">Уведомления</a>
+								</li>
+								<li class="account__item">
+									<a href="#" class="account__link">Выйти</a>
+								</li>
+							</ul>
+						</div>
+						<!--  -->
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section class="page__cart cart">
+					<div class="container">
+						<h1 class="cart__title">Корзина</h1>
+						<div class="cart__body">
+							<div class="cart__block">
+								<ul class="cart__controls">
+									<li class="cart__control">
+										<button type="button" class="cart__select">
+											<div class="button-icon minus active"></div>
+											<span>Выделить всё</span>
+										</button>
+									</li>
+									<li class="cart__control">
+										<button type="button" class="cart__delete">
+											Удалить выбранные
+										</button>
+									</li>
+								</ul>
+								<div class="cart__items">
+									<article class="cart__item item-cart">
+										<button
+											class="item-cart__selector button-icon active"
+										></button>
+										<img
+											class="item-cart__image"
+											src="img/cart/01.png"
+											alt="item"
+										/>
+										<div class="item-cart__body">
+											<h3 class="item-cart__title">
+												Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
+											</h3>
+											<div class="item-cart__info">
+												<div
+													data-price-with-card="44,50"
+													class="item-cart__price-with-card"
+												>
+													<span> 44,50 ₽ </span>
+													<span> С картой </span>
+												</div>
+												<div
+													data-price-without-card="50"
+													class="item-cart__price-without-card"
+												>
+													<span> 50 ₽ </span>
+													<span> Обычная </span>
+												</div>
+
+												<span> за шт. </span>
+												<div
+													class="item-cart__discount"
+													data-discount="-10%"
+												></div>
+											</div>
+										</div>
+										<div class="item-cart__actions">
+											<div class="item-cart__counter button">
+												<button
+													type="button"
+													class="item-cart__counter-btn item-cart__counter-reduce"
+												>
+													-
+												</button>
+												<span
+													data-counter="1"
+													class="item-cart__counter-value"
+												></span>
+												<button
+													type="button"
+													class="item-cart__counter-btn item-cart__counter-increase"
+												>
+													+
+												</button>
+											</div>
+											<!-- В JavaScript будет идти автоматический расчёт -->
+											<div class="item-cart__price">₽</div>
+										</div>
+									</article>
+									<article class="cart__item item-cart out-of-stock">
+										<button class="item-cart__selector button-icon"></button>
+										<img
+											class="item-cart__image"
+											src="img/cart/01.png"
+											alt="item"
+										/>
+										<div class="item-cart__body">
+											<h3 class="item-cart__title">
+												Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
+											</h3>
+											<div class="item-cart__info">
+												<div
+													data-price-with-card="44,50"
+													class="item-cart__price-with-card"
+												>
+													<span> 44,50 ₽ </span>
+													<span> С картой </span>
+												</div>
+												<div
+													data-price-without-card="50"
+													class="item-cart__price-without-card"
+												>
+													<span> 50 ₽ </span>
+													<span> Обычная </span>
+												</div>
+
+												<span> за шт. </span>
+												<div
+													class="item-cart__discount"
+													data-discount="-10%"
+												></div>
+											</div>
+										</div>
+										<div class="item-cart__actions">
+											<div class="item-cart__out-of-stock">Нет в наличии</div>
+										</div>
+									</article>
+								</div>
+							</div>
+
+							<form method="get" class="cart__control control-cart">
+								<div class="control-cart__bonus">
+									<div class="control-cart__agree">
+										<div class="switch"></div>
+
+										<span> Списать 200 ₽ </span>
+
+									</div>
+									<div class="control-cart__capital">
+										На карте накоплено 200 ₽
+									</div>
+									
+								</div>
+
+								<div class="control-cart__calc">
+									<ul class="control-cart__list">
+										<li class="control-cart__item">
+											<span class="control-cart__item-title">3 товара</span>
+											<span class="control-cart__item-value">258,10 ₽ </span>
+										</li>
+										<li class="control-cart__item">
+											<span class="control-cart__item-title">Скидка</span>
+											<span
+												class="control-cart__item-value control-cart__item-value--highlighted"
+												>-8,01 ₽
+											</span>
+										</li>
+									</ul>
+								</div>
+								<div class="control-cart__result">
+									<div class="control-cart__amount">
+										<div class="control-cart__amount-title">Итог</div>
+										<div class="control-cart__amount-value">250,00 ₽</div>
+									</div>
+									<div class="control-cart__getting-bonus">
+										<img src="img/icons/cart/bonus.svg" alt="bonus" />
+										Вы получаете 100 бонусов
+									</div>
+									<div class="control-cart__alert">
+										Минимальная сумма заказа 1000р
+									</div>
+									<button class="control-cart__button" type="submit">
+										Оформить заказ
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<!-- Мобильная навигация -->
+			<nav class="mobile-navbar actions">
+				<div class="mobile-navbar__wrapper">
+					<a href="#" class="mobile-navbar__link">
+						<img src="img/icons/actions/burger.svg" alt="Каталог" />
+						<span class="actions__text">Каталог</span></a
+					>
+					<a href="#" class="mobile-navbar__link">
+						<img src="img/icons/actions/01.svg" alt="01" />
+						<span class="actions__text">Избранное</span></a
+					>
+					<a href="#" class="mobile-navbar__link">
+						<img src="img/icons/actions/02.svg" alt="02" />
+						<span class="actions__text">Заказы</span></a
+					>
+					<a href="#" class="mobile-navbar__link">
+						<img src="img/icons/actions/03.svg" alt="03" />
+						<span class="actions__text">Корзина</span></a
+					>
+					<button
+						class="mobile-navbar__link mobile-navbar__account"
+						type="button"
+					>
+						<img src="img/avatar.jpg" alt="avatar" class="account__avatar" />
+					</button>
+				</div>
+			</nav>
+		</div>
+		<script src="./js/main.js" type="module"></script>
+		<script src="./js/search.js" type="module"></script>
+		<script src="./js/maps.js" type="module"></script>
+		<script src="./js/products.js" type="module"></script>
+		<script src="./js/cart.js" type="module"></script>
+	</body>
+</html>
